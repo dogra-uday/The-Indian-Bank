@@ -57,6 +57,21 @@
   font-weight: 700;
 }
 
+.hero-filepicker-trigger {
+  margin: 0;
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: rgb(255 255 255 / 16%);
+  color: #fff;
+  cursor: pointer;
+}
+
+.hero-filepicker-trigger:hover,
+.hero-filepicker-trigger:focus {
+  background: rgb(255 255 255 / 24%);
+}
+
 .hero-filepicker-input {
   width: 100%;
   padding: 10px;
@@ -64,6 +79,24 @@
   border-radius: 10px;
   background: rgb(255 255 255 / 8%);
   color: #fff;
+}
+
+.hero-filepicker-input.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.hero-filepicker-filename {
+  margin: 8px 0 0;
+  color: rgb(255 255 255 / 86%);
+  font-size: var(--body-font-size-s);
 }
 
 .hero-filepicker-help {

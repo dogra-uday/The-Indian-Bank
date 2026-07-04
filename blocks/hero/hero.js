@@ -8,17 +8,27 @@ function createFilePicker() {
 
   const wrapper = document.createElement('div');
   wrapper.className = 'hero-filepicker';
+  wrapper.setAttribute('contenteditable', 'false');
 
   const label = document.createElement('label');
   label.className = 'hero-filepicker-label';
   label.setAttribute('for', pickerId);
   label.textContent = 'Choose a hero image from your filesystem';
 
+  const trigger = document.createElement('button');
+  trigger.className = 'hero-filepicker-trigger';
+  trigger.type = 'button';
+  trigger.textContent = 'Choose File';
+
   const input = document.createElement('input');
-  input.className = 'hero-filepicker-input';
+  input.className = 'hero-filepicker-input visually-hidden';
   input.id = pickerId;
   input.type = 'file';
   input.accept = 'image/*';
+
+  const fileName = document.createElement('p');
+  fileName.className = 'hero-filepicker-filename';
+  fileName.textContent = 'No file selected';
 
   const help = document.createElement('p');
   help.className = 'hero-filepicker-help';
@@ -28,18 +38,31 @@ function createFilePicker() {
   preview.className = 'hero-filepicker-preview';
   preview.innerHTML = '<span>Hero image preview appears here</span>';
 
+  const stop = (event) => event.stopPropagation();
+  wrapper.addEventListener('click', stop);
+  wrapper.addEventListener('mousedown', stop);
+  input.addEventListener('click', stop);
+
+  trigger.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    input.click();
+  });
+
   input.addEventListener('change', () => {
     const [file] = input.files || [];
     if (!file) {
+      fileName.textContent = 'No file selected';
       preview.innerHTML = '<span>Hero image preview appears here</span>';
       return;
     }
 
+    fileName.textContent = file.name;
     const objectUrl = URL.createObjectURL(file);
     preview.innerHTML = `<img src="${objectUrl}" alt="Selected hero image preview">`;
   });
 
-  wrapper.append(label, input, help, preview);
+  wrapper.append(label, trigger, input, fileName, help, preview);
   return wrapper;
 }
 
