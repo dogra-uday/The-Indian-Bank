@@ -7,6 +7,7 @@ Enterprise-grade digital account opening journey built on Adobe Adaptive Forms a
 
 ## Account Opening Artifacts
 
+- MASTER RUNBOOK (read this first): /docs/account-opening-master-runbook.md
 - Landing page: /account-opening
 - Adaptive form schema: /forms/account-opening-form.json
 - Branding styles: /styles/indian-bank-account-opening.css

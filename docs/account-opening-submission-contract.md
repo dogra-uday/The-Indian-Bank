@@ -1,5 +1,7 @@
 # Indian Bank Account Opening - Submission Contract
 
+Primary guide: use [account-opening-master-runbook.md](./account-opening-master-runbook.md) first.
+
 This contract defines how account-opening payloads move from the Adaptive Form to enterprise backend services.
 
 ## Contract Files

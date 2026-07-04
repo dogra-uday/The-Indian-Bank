@@ -1,5 +1,7 @@
 # Indian Bank Account Opening - End-to-End Runbook (Step-by-Step)
 
+Primary guide: use [account-opening-master-runbook.md](./account-opening-master-runbook.md) first.
+
 This runbook is written as a follow-along checklist. Do each step in order.
 
 ## What you will set up

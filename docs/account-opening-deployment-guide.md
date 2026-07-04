@@ -1,5 +1,7 @@
 # Indian Bank Account Opening - End-to-End Setup Guide
 
+Primary guide: use [account-opening-master-runbook.md](./account-opening-master-runbook.md) first.
+
 This guide helps you:
 - Resolve Preview/Live 404 issues for Edge Delivery Services
 - Publish a branded account-opening page

@@ -5,24 +5,6 @@ import { dirname, resolve } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const mappingsPath = resolve(__dirname, '../../blocks/form/mappings.js');
-const mappingsStatic = resolve(__dirname, './src/mappings-static.js');
-
-// Redirects imports of blocks/form/mappings.js to the static registry so
-// esbuild can bundle all components without window.hlx path lookups.
-const mappingsAliasPlugin = {
-  name: 'mappings-alias',
-  setup(build) {
-    build.onResolve({ filter: /mappings\.js/ }, (args) => {
-      const resolved = resolve(args.resolveDir, args.path);
-      if (resolved === mappingsPath) {
-        return { path: mappingsStatic };
-      }
-      return null;
-    });
-  },
-};
-
 // Replaces `typeof Worker` with `"undefined"` across all JS files so every
 // Worker guard evaluates to true. This covers both rules/index.js (which
 // decides the no-worker path) and form.js (which guards the loadRuleEngine
@@ -42,7 +24,7 @@ const noWorkerPlugin = {
   },
 };
 
-// Stubs out mappings.js and all components — no component decorators are
+// Stubs out mappings.js and all components ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â no component decorators are
 // loaded. Forms render with native HTML only (no accordion, wizard, etc.).
 const stubMappingsPlugin = {
   name: 'stub-mappings',
@@ -74,29 +56,6 @@ const stubDocFormsPlugin = {
       }
       return { contents: 'export default class DocBasedFormToAF { transform(f) { return f; } }', loader: 'js' };
     });
-  },
-};
-
-// Stubs out the entire rule engine (afb-runtime, formula engine, formatters).
-// The form renders with its initial/default field values but rules (show/hide,
-// computed values, validation expressions) do not execute.
-// Eliminates ~170KB from the minified bundle.
-const stubRulesPlugin = {
-  name: 'stub-rules',
-  setup(build) {
-    build.onResolve({ filter: /rules\/index\.js/ }, () => ({ path: 'stub-rules', namespace: 'stub-rules' }));
-    build.onLoad({ filter: /.*/, namespace: 'stub-rules' }, () => ({
-      contents: `
-        export async function initAdaptiveForm(formDef, createForm) {
-          const response = await createForm(formDef, null, 'aem');
-          return response?.form;
-        }
-        export async function loadRuleEngine() {}
-        export async function fieldChanged() {}
-        export function subscribe() {}
-      `,
-      loader: 'js',
-    }));
   },
 };
 
