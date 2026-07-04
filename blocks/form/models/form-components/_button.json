@@ -1,0 +1,43 @@
+{
+  "definitions": [
+    {
+      "title": "Form Button",
+      "id": "form-button",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/button/v1/button",
+            "template": {
+              "jcr:title": "Form Button",
+              "fieldType": "button"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "form-button",
+      "fields": [
+        {
+          "component": "container",
+          "name": "button_label",
+          "label": "Form Button",
+          "collapsible": false
+        },
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../form-common/_basic-fields.json#/fields"
+        },
+        {
+          "...": "../form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}

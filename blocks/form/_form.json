@@ -1,0 +1,144 @@
+{
+  "definitions": [
+    {
+      "title": "Adaptive Form",
+      "id": "form",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "fd/franklin/components/form/v1/form",
+            "template": {
+              "fieldType": "form",
+              "fd:version": "2.1"
+            }
+          }
+        }
+      }
+    },
+    { 
+      "...": "./components/accordion/_accordion.json#/definitions" 
+    },
+    {
+      "...": "./models/form-components/_recaptcha.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_checkbox-group.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_date-input.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_drop-down.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_email.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_file-input.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_button.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_fragment.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_image.json#/definitions"
+    },
+    { 
+      "...": "./components/modal/_modal.json#/definitions" 
+    },
+    {
+      "...": "./models/form-components/_number-input.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_panel.json#/definitions"
+    },
+    { 
+      "...": "./components/password/_password.json#/definitions" 
+    },
+    {
+      "...": "./models/form-components/_telephone-input.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_radio-group.json#/definitions"
+    },
+    { 
+      "...": "./components/rating/_rating.json#/definitions" 
+    },
+    {
+      "...": "./models/form-components/_reset-button.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_checkbox.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_text.json#/definitions"
+    },
+    {
+      "...": "./models/form-components/_submit-button.json#/definitions"
+    },
+    { 
+      "...": "./components/tnc/_tnc.json#/definitions" 
+    },
+    {
+      "...": "./models/form-components/_text-input.json#/definitions"
+    },
+    { 
+      "...": "./components/wizard/_wizard.json#/definitions" 
+    }
+  ],
+  "models": [
+    {
+      "id": "form",
+      "fields": [
+        {
+          "component": "container",
+          "name": "basic",
+          "label": "Use the Edit Form Properties extension to configure Adaptive Form properties, including Submit Action, Prefill, and Thank-You options.",
+          "description": "Visit https://www.adobe.com/go/learn_aemforms_cs_properties_ext for more details.",
+          "collapsible": false,
+          "fields": []
+        }
+      ]
+    },
+    {
+      "...": "./models/form-components/_*.json#/models"
+    },
+    {
+      "...": "./components/*/_*.json#/models"
+    }
+  ],
+  "filters": [
+    {
+      "id": "form",
+      "components": [
+        "captcha",
+        "checkbox",
+        "checkbox-group",
+        "date-input",
+        "drop-down",
+        "email",
+        "file-input",
+        "form-accordion",
+        "form-button",
+        "form-fragment",
+        "form-image",
+        "form-modal",
+        "form-reset-button",
+        "form-submit-button",
+        "number-input",
+        "panel",
+        "password",
+        "plain-text",
+        "radio-group",
+        "rating",
+        "telephone-input",
+        "text-input",
+        "tnc",
+        "wizard",
+        "range"
+      ]
+    }
+  ]
+}
