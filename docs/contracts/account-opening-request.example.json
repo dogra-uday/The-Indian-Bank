@@ -1,0 +1,53 @@
+{
+  "requestContext": {
+    "sourceSystem": "AEM-EDGE-FORMS",
+    "sourceChannel": "WEB",
+    "submittedAt": "2026-07-04T11:20:01Z",
+    "formVersion": "1.0.0",
+    "journeyId": "retail-account-opening",
+    "branchCode": "BR0456"
+  },
+  "applicant": {
+    "firstName": "RAVI",
+    "lastName": "KUMAR",
+    "dateOfBirth": "1994-10-12",
+    "gender": "Male",
+    "maritalStatus": "Single",
+    "panNumber": "ABCDE1234F",
+    "aadhaarNumber": "987654321012"
+  },
+  "contact": {
+    "mobileNumber": "9876543210",
+    "emailAddress": "ravi.kumar@example.com",
+    "addressLine1": "16 MG Road",
+    "addressLine2": "Near Metro Station",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "pinCode": "600001"
+  },
+  "account": {
+    "accountType": "Savings",
+    "openingDeposit": 25000,
+    "debitCardRequired": "Yes",
+    "additionalServices": [
+      "Net Banking",
+      "SMS Alerts"
+    ]
+  },
+  "documents": {
+    "passportPhoto": {
+      "fileName": "photo-ravi-kumar.jpg",
+      "contentType": "image/jpeg",
+      "checksumSha256": "7f57f00f9a80dbf6f95f0c8686fb4d3f52c4cf4ec9ec3939017f478f9df79e3f"
+    },
+    "addressProof": {
+      "fileName": "address-proof-ravi-kumar.pdf",
+      "contentType": "application/pdf",
+      "checksumSha256": "988f6a4f66df372cd6b22a12f41f86df54513a4fc96cc22ed7f4cbf2c4224ca1"
+    }
+  },
+  "declaration": {
+    "consentAccepted": true,
+    "consentTimestamp": "2026-07-04T11:19:58Z"
+  }
+}

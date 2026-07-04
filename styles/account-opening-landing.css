@@ -1,0 +1,117 @@
+:root {
+    --ib-brand-blue: #004b8d;
+    --ib-brand-ink: #102b45;
+    --ib-brand-orange: #ff9f1a;
+    --ib-brand-mist: #eef4fb;
+}
+
+main .section.account-opening-hero {
+    position: relative;
+    overflow: hidden;
+    margin-top: 0;
+    background:
+        radial-gradient(circle at 12% 8%, rgb(255 159 26 / 22%), transparent 26%),
+        radial-gradient(circle at 92% 20%, rgb(0 75 141 / 30%), transparent 35%),
+        linear-gradient(160deg, #eaf3fe, #fff 58%);
+}
+
+main .section.account-opening-hero::before,
+main .section.account-opening-hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    pointer-events: none;
+}
+
+main .section.account-opening-hero::before {
+    width: 440px;
+    height: 440px;
+    right: -140px;
+    top: -220px;
+    background: rgb(0 75 141 / 15%);
+}
+
+main .section.account-opening-hero::after {
+    width: 260px;
+    height: 260px;
+    left: -90px;
+    bottom: -130px;
+    background: rgb(255 159 26 / 16%);
+}
+
+main .section.account-opening-hero > div {
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+    padding-bottom: 52px;
+}
+
+.account-opening-kicker {
+    display: inline-block;
+    margin-bottom: 12px;
+    border-radius: 999px;
+    padding: 6px 12px;
+    color: var(--ib-brand-blue);
+    background: rgb(0 75 141 / 10%);
+    font-size: 0.86rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.account-opening-hero h1 {
+    margin: 8px 0 10px;
+    color: var(--ib-brand-ink);
+    font-size: clamp(2rem, 1.45rem + 2.4vw, 3.45rem);
+    line-height: 1.06;
+}
+
+.account-opening-hero p {
+    max-width: 74ch;
+    color: #29425c;
+}
+
+.account-opening-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.account-opening-badges span {
+    border: 1px solid #c4d7ec;
+    border-radius: 999px;
+    padding: 7px 12px;
+    background: rgb(255 255 255 / 78%);
+    color: #173b5b;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+main .section.account-opening-form-zone {
+    background: linear-gradient(180deg, #fff, var(--ib-brand-mist));
+    margin-top: 0;
+    padding-top: 18px;
+    padding-bottom: 44px;
+}
+
+.account-opening-form-note {
+    margin-bottom: 14px;
+    color: #2f4a65;
+    font-size: 0.95rem;
+}
+
+@media (width <= 899px) {
+    main .section.account-opening-hero > div {
+        padding-top: 34px;
+        padding-bottom: 38px;
+    }
+
+    .account-opening-badges {
+        gap: 8px;
+    }
+
+    .account-opening-badges span {
+        font-size: 0.8rem;
+    }
+}

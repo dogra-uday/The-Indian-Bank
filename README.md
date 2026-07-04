@@ -1,9 +1,20 @@
-# Your Project's Title...
-Your project's description...
+# The Indian Bank - Adaptive Account Opening
+Enterprise-grade digital account opening journey built on Adobe Adaptive Forms and Edge Delivery Services.
 
 ## Environments
-- Preview: https://main--aem-boilerplate-forms--adobe-rnd.aem.page/
-- Live: https://main--aem-boilerplate-forms--adobe-rnd.aem.live/
+- Preview: https://main--the-indian-bank--dogra-uday.aem.page/
+- Live: https://main--the-indian-bank--dogra-uday.aem.live/
+
+## Account Opening Artifacts
+
+- Landing page: /account-opening
+- Adaptive form schema: /forms/account-opening-form.json
+- Branding styles: /styles/indian-bank-account-opening.css
+- Deployment and 404 fix runbook: /docs/account-opening-deployment-guide.md
+- End-to-end step-by-step runbook: /docs/account-opening-e2e-runbook.md
+- Submission contract guide: /docs/account-opening-submission-contract.md
+- OpenAPI contract: /docs/contracts/account-opening-submission.openapi.yaml
+- Java backend starter: /backend/account-opening-api
 
 ## Documentation
 Before using the aem-boilerplate, we recommand you to go through the documentation on [www.aem.live](https://www.aem.live/docs/) and [experienceleague.adobe.com](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/edge-delivery/wysiwyg-authoring/authoring), more specifically:

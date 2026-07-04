@@ -1,0 +1,8 @@
+server:
+  port: 8088
+
+app:
+  webhook:
+    hmac-secret: change-me-in-prod
+  security:
+    bearer-token: change-me-in-prod

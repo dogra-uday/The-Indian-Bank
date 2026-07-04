@@ -1,0 +1,571 @@
+{
+  "id": "ib-account-opening-form",
+  "name": "Indian Bank Account Opening",
+  "adaptiveform": "0.10.0",
+  "metadata": {
+    "grammar": "json-formula-1.0.0",
+    "version": "1.0.0"
+  },
+  "action": "/adobe/forms/af/submit/aW5kaWFuLWJhbmstYWNjb3VudC1vcGVuaW5n",
+  "thankYouMsg": "<h3>Application submitted successfully.</h3><p>Your reference ID has been generated. Our onboarding team will contact you within one business day.</p>",
+  "properties": {
+    "fd:path": "/content/forms/af/indian-bank/account-opening",
+    "style": "/styles/indian-bank-account-opening.css",
+    "submissionContract": {
+      "contractVersion": "1.0.0",
+      "openApiSpec": "/docs/contracts/account-opening-submission.openapi.yaml",
+      "requestExample": "/docs/contracts/account-opening-request.example.json",
+      "responseExample": "/docs/contracts/account-opening-response.example.json",
+      "webhookExample": "/docs/contracts/account-opening-webhook-event.example.json"
+    },
+    "enterpriseSubmission": {
+      "mode": "api",
+      "endpoint": "https://api.indianbank.example.com/v1/account-openings",
+      "method": "POST",
+      "requiredHeaders": [
+        "X-Correlation-Id",
+        "Idempotency-Key"
+      ],
+      "auth": {
+        "type": "OAuth2ClientCredentials",
+        "tokenUrl": "https://auth.indianbank.example.com/oauth2/token",
+        "scope": "account.openings.write"
+      },
+      "statusEndpointTemplate": "https://api.indianbank.example.com/v1/account-openings/{applicationId}",
+      "webhook": {
+        "eventType": "ACCOUNT_OPENING_STATUS_CHANGED",
+        "callbackUrl": "https://hooks.indianbank.example.com/forms/account-openings/status",
+        "hmacHeader": "X-IB-Signature"
+      }
+    },
+    "fd:submit": {
+      "actionName": "spreadsheet",
+      "spreadsheet": {
+        "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_SHEET_ID/edit#gid=0"
+      }
+    },
+    "journey": "retail-account-opening",
+    "brand": "indian-bank"
+  },
+  "items": [
+    {
+      "id": "headline",
+      "name": "headline",
+      "fieldType": "heading",
+      "value": "Indian Bank Retail Account Opening"
+    },
+    {
+      "id": "intro",
+      "name": "intro",
+      "fieldType": "plain-text",
+      "value": "Complete the details below to open your account. All mandatory fields are marked with an asterisk.",
+      "properties": {
+        "colspan": "12"
+      }
+    },
+    {
+      "id": "panel-personal",
+      "name": "personalDetails",
+      "fieldType": "panel",
+      "label": {
+        "value": "Personal Details"
+      },
+      "items": [
+        {
+          "id": "first-name",
+          "name": "firstName",
+          "fieldType": "text-input",
+          "label": {
+            "value": "First Name"
+          },
+          "required": true,
+          "pattern": "^[A-Za-z][A-Za-z ]{1,49}$",
+          "constraintMessages": {
+            "required": "Enter first name.",
+            "pattern": "First name must contain only letters and spaces."
+          },
+          "properties": {
+            "colspan": "6"
+          }
+        },
+        {
+          "id": "last-name",
+          "name": "lastName",
+          "fieldType": "text-input",
+          "label": {
+            "value": "Last Name"
+          },
+          "required": true,
+          "pattern": "^[A-Za-z][A-Za-z ]{1,49}$",
+          "constraintMessages": {
+            "required": "Enter last name.",
+            "pattern": "Last name must contain only letters and spaces."
+          },
+          "properties": {
+            "colspan": "6"
+          }
+        },
+        {
+          "id": "dob",
+          "name": "dateOfBirth",
+          "fieldType": "date-input",
+          "label": {
+            "value": "Date of Birth"
+          },
+          "required": true,
+          "constraintMessages": {
+            "required": "Select date of birth."
+          },
+          "properties": {
+            "colspan": "4"
+          }
+        },
+        {
+          "id": "gender",
+          "name": "gender",
+          "fieldType": "drop-down",
+          "label": {
+            "value": "Gender"
+          },
+          "required": true,
+          "enum": [
+            "",
+            "Male",
+            "Female",
+            "Non-Binary",
+            "Prefer not to say"
+          ],
+          "enumNames": [
+            "Select",
+            "Male",
+            "Female",
+            "Non-Binary",
+            "Prefer not to say"
+          ],
+          "constraintMessages": {
+            "required": "Select gender."
+          },
+          "properties": {
+            "colspan": "4"
+          }
+        },
+        {
+          "id": "marital-status",
+          "name": "maritalStatus",
+          "fieldType": "drop-down",
+          "label": {
+            "value": "Marital Status"
+          },
+          "required": true,
+          "enum": [
+            "",
+            "Single",
+            "Married",
+            "Divorced",
+            "Widowed"
+          ],
+          "enumNames": [
+            "Select",
+            "Single",
+            "Married",
+            "Divorced",
+            "Widowed"
+          ],
+          "constraintMessages": {
+            "required": "Select marital status."
+          },
+          "properties": {
+            "colspan": "4"
+          }
+        },
+        {
+          "id": "pan",
+          "name": "panNumber",
+          "fieldType": "text-input",
+          "label": {
+            "value": "PAN Number"
+          },
+          "required": true,
+          "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+          "placeholder": "ABCDE1234F",
+          "constraintMessages": {
+            "required": "Enter PAN number.",
+            "pattern": "PAN format must be 5 letters, 4 digits, 1 letter."
+          },
+          "properties": {
+            "colspan": "6"
+          }
+        },
+        {
+          "id": "aadhaar",
+          "name": "aadhaarNumber",
+          "fieldType": "text-input",
+          "label": {
+            "value": "Aadhaar Number"
+          },
+          "required": true,
+          "pattern": "^[2-9]{1}[0-9]{11}$",
+          "placeholder": "12 digit Aadhaar",
+          "constraintMessages": {
+            "required": "Enter Aadhaar number.",
+            "pattern": "Aadhaar number must be a valid 12-digit value."
+          },
+          "properties": {
+            "colspan": "6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "panel-contact",
+      "name": "contactDetails",
+      "fieldType": "panel",
+      "label": {
+        "value": "Contact and Address"
+      },
+      "items": [
+        {
+          "id": "mobile",
+          "name": "mobileNumber",
+          "fieldType": "text-input",
+          "label": {
+            "value": "Mobile Number"
+          },
+          "required": true,
+          "pattern": "^[6-9][0-9]{9}$",
+          "placeholder": "10 digit mobile number",
+          "constraintMessages": {
+            "required": "Enter mobile number.",
+            "pattern": "Mobile number must be a valid 10-digit Indian number."
+          },
+          "properties": {
+            "colspan": "6"
+          }
+        },
+        {
+          "id": "email",
+          "name": "emailAddress",
+          "fieldType": "text-input",
+          "type": "email",
+          "label": {
+            "value": "Email Address"
+          },
+          "required": true,
+          "constraintMessages": {
+            "required": "Enter email address."
+          },
+          "properties": {
+            "colspan": "6"
+          }
+        },
+        {
+          "id": "address-line-1",
+          "name": "addressLine1",
+          "fieldType": "text-input",
+          "label": {
+            "value": "Address Line 1"
+          },
+          "required": true,
+          "constraintMessages": {
+            "required": "Enter address line 1."
+          },
+          "properties": {
+            "colspan": "8"
+          }
+        },
+        {
+          "id": "address-line-2",
+          "name": "addressLine2",
+          "fieldType": "text-input",
+          "label": {
+            "value": "Address Line 2"
+          },
+          "required": false,
+          "properties": {
+            "colspan": "4"
+          }
+        },
+        {
+          "id": "city",
+          "name": "city",
+          "fieldType": "text-input",
+          "label": {
+            "value": "City"
+          },
+          "required": true,
+          "constraintMessages": {
+            "required": "Enter city."
+          },
+          "properties": {
+            "colspan": "4"
+          }
+        },
+        {
+          "id": "state",
+          "name": "state",
+          "fieldType": "drop-down",
+          "label": {
+            "value": "State"
+          },
+          "required": true,
+          "enum": [
+            "",
+            "Andhra Pradesh",
+            "Delhi",
+            "Karnataka",
+            "Kerala",
+            "Maharashtra",
+            "Tamil Nadu",
+            "Telangana",
+            "Uttar Pradesh",
+            "West Bengal",
+            "Other"
+          ],
+          "enumNames": [
+            "Select",
+            "Andhra Pradesh",
+            "Delhi",
+            "Karnataka",
+            "Kerala",
+            "Maharashtra",
+            "Tamil Nadu",
+            "Telangana",
+            "Uttar Pradesh",
+            "West Bengal",
+            "Other"
+          ],
+          "constraintMessages": {
+            "required": "Select state."
+          },
+          "properties": {
+            "colspan": "4"
+          }
+        },
+        {
+          "id": "pincode",
+          "name": "pinCode",
+          "fieldType": "text-input",
+          "label": {
+            "value": "PIN Code"
+          },
+          "required": true,
+          "pattern": "^[1-9][0-9]{5}$",
+          "constraintMessages": {
+            "required": "Enter PIN code.",
+            "pattern": "PIN code must be a valid 6-digit value."
+          },
+          "properties": {
+            "colspan": "4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "panel-account",
+      "name": "accountPreferences",
+      "fieldType": "panel",
+      "label": {
+        "value": "Account Preferences"
+      },
+      "items": [
+        {
+          "id": "account-type",
+          "name": "accountType",
+          "fieldType": "radio-group",
+          "label": {
+            "value": "Account Type"
+          },
+          "required": true,
+          "enum": [
+            "Savings",
+            "Current",
+            "Salary"
+          ],
+          "enumNames": [
+            "Savings",
+            "Current",
+            "Salary"
+          ],
+          "constraintMessages": {
+            "required": "Choose account type."
+          },
+          "properties": {
+            "variant": "cards",
+            "colspan": "6"
+          }
+        },
+        {
+          "id": "opening-deposit",
+          "name": "openingDeposit",
+          "fieldType": "number-input",
+          "label": {
+            "value": "Opening Deposit (INR)"
+          },
+          "required": true,
+          "minimum": 1000,
+          "maximum": 1000000,
+          "constraintMessages": {
+            "required": "Enter opening deposit.",
+            "minimum": "Minimum opening deposit is INR 1000.",
+            "maximum": "Opening deposit must be less than or equal to INR 1000000."
+          },
+          "properties": {
+            "colspan": "6"
+          }
+        },
+        {
+          "id": "debit-card",
+          "name": "debitCardRequired",
+          "fieldType": "radio-group",
+          "label": {
+            "value": "Need Debit Card?"
+          },
+          "required": true,
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "enumNames": [
+            "Yes",
+            "No"
+          ],
+          "constraintMessages": {
+            "required": "Select debit card preference."
+          },
+          "properties": {
+            "colspan": "6"
+          }
+        },
+        {
+          "id": "services",
+          "name": "additionalServices",
+          "fieldType": "checkbox-group",
+          "label": {
+            "value": "Additional Services"
+          },
+          "required": false,
+          "enum": [
+            "Net Banking",
+            "Mobile Banking",
+            "SMS Alerts",
+            "Cheque Book"
+          ],
+          "enumNames": [
+            "Net Banking",
+            "Mobile Banking",
+            "SMS Alerts",
+            "Cheque Book"
+          ],
+          "properties": {
+            "colspan": "6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "panel-documents",
+      "name": "kycDocuments",
+      "fieldType": "panel",
+      "label": {
+        "value": "KYC and Documents"
+      },
+      "items": [
+        {
+          "id": "photo-upload",
+          "name": "passportPhoto",
+          "fieldType": "file-input",
+          "label": {
+            "value": "Upload Passport Size Photo"
+          },
+          "required": true,
+          "accept": [
+            "image/jpeg",
+            "image/png"
+          ],
+          "maxFileSize": 5242880,
+          "constraintMessages": {
+            "required": "Upload your photo.",
+            "accept": "Only JPG or PNG files are allowed.",
+            "maxFileSize": "Photo size must be under 5 MB."
+          },
+          "properties": {
+            "colspan": "6"
+          }
+        },
+        {
+          "id": "address-proof-upload",
+          "name": "addressProof",
+          "fieldType": "file-input",
+          "label": {
+            "value": "Upload Address Proof"
+          },
+          "required": true,
+          "accept": [
+            "application/pdf",
+            "image/jpeg",
+            "image/png"
+          ],
+          "maxFileSize": 10485760,
+          "constraintMessages": {
+            "required": "Upload address proof.",
+            "accept": "Allowed formats are PDF, JPG, or PNG.",
+            "maxFileSize": "File size must be under 10 MB."
+          },
+          "properties": {
+            "colspan": "6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "panel-declaration",
+      "name": "declarationSection",
+      "fieldType": "panel",
+      "label": {
+        "value": "Declaration"
+      },
+      "items": [
+        {
+          "id": "declaration-text",
+          "name": "declarationText",
+          "fieldType": "plain-text",
+          "value": "I confirm that all information provided is true and accurate and I consent to Indian Bank processing this information for account onboarding.",
+          "properties": {
+            "colspan": "12"
+          }
+        },
+        {
+          "id": "consent",
+          "name": "consent",
+          "fieldType": "checkbox",
+          "label": {
+            "value": "I agree to the terms and conditions and privacy policy"
+          },
+          "enum": [
+            "agree"
+          ],
+          "required": true,
+          "constraintMessages": {
+            "required": "You must accept terms and conditions before submission."
+          },
+          "properties": {
+            "colspan": "12"
+          }
+        },
+        {
+          "id": "submit",
+          "name": "submitApplication",
+          "fieldType": "button",
+          "buttonType": "submit",
+          "label": {
+            "value": "Submit Application"
+          },
+          "properties": {
+            "fd:buttonType": "submit",
+            "colspan": "12"
+          }
+        }
+      ]
+    }
+  ]
+}

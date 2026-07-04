@@ -1,0 +1,10 @@
+{
+  "eventType": "ACCOUNT_OPENING_STATUS_CHANGED",
+  "eventVersion": "1.0.0",
+  "eventTime": "2026-07-04T11:35:12Z",
+  "correlationId": "9a84c2d9-db24-4f0d-a18d-9676d387ae6c",
+  "applicationId": "IB-2026-A7D9X2KQ",
+  "status": "IN_REVIEW",
+  "subStatus": "DOCUMENT_VERIFICATION",
+  "remarks": "KYC verification is in progress"
+}
