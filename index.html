@@ -2,23 +2,87 @@
 <html>
 
 <head>
-  <title>Indian Bank | Digital Account Opening</title>
-  <meta name="description" content="Indian Bank digital account opening journey powered by Adobe Adaptive Forms on Edge Delivery Services.">
+  <title>Indian Bank | Digital Banking, Reimagined</title>
+  <meta name="description" content="Open your Indian Bank account through a secure, AI-assisted and compliance-ready digital journey powered by Adobe Adaptive Forms.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/scripts/scripts.js" type="module"></script>
   <link rel="stylesheet" href="/styles/styles.css">
-  <link rel="stylesheet" href="/styles/account-opening-landing.css">
+  <link rel="stylesheet" href="/styles/index-branding.css">
 </head>
 
 <body>
   <header></header>
   <main>
-    <div class="section account-opening-hero">
+    <div class="section ib-hero-section">
       <div>
-        <span class="account-opening-kicker">Indian Bank Digital Experience</span>
-        <h1>Enterprise Account Opening Journey</h1>
-        <p>Start the adaptive onboarding experience built for secure KYC collection, regulatory compliance, and conversion-optimized digital journeys.</p>
-        <p><a class="button" href="/account-opening">Start Account Opening</a></p>
+        <div class="ib-hero-grid">
+          <div class="ib-hero-content">
+            <p class="ib-kicker">Indian Bank 2.0 Experience</p>
+            <h1>Digital Account Opening with Human Trust and AI Precision</h1>
+            <p class="ib-lead-copy">Move from branch queues to a guided onboarding journey that is secure, compliant, and fast. Verify identity, upload KYC documents, and receive instant application tracking.</p>
+            <div class="ib-hero-actions">
+              <a class="button" href="/account-opening">Open Account Now</a>
+              <a class="button secondary" href="/account-opening#support">Talk to an Advisor</a>
+            </div>
+            <ul class="ib-trust-list">
+              <li>RBI-aware compliance checks</li>
+              <li>Encrypted document handling</li>
+              <li>Idempotent and traceable submissions</li>
+            </ul>
+          </div>
+          <div class="ib-hero-visuals" aria-hidden="true">
+            <img src="/icons/ai-account-hero.svg" alt="">
+            <img src="/icons/ai-security-shield.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section ib-value-section">
+      <div>
+        <h2>Everything You Need to Open an Account, in One Flow</h2>
+        <div class="ib-value-grid">
+          <article class="ib-card">
+            <h3>Smart Guidance</h3>
+            <p>Adaptive field behavior helps customers focus only on relevant details for account type, KYC, and declarations.</p>
+          </article>
+          <article class="ib-card">
+            <h3>Enterprise Security</h3>
+            <p>Every request can include correlation and idempotency headers for resilient backend processing and audit trails.</p>
+          </article>
+          <article class="ib-card">
+            <h3>Operational Visibility</h3>
+            <p>Track applications through a status endpoint and integrate webhook events with downstream onboarding systems.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="section ib-process-section">
+      <div>
+        <h2>Three-Step Onboarding Journey</h2>
+        <ol class="ib-process-list">
+          <li>
+            <h3>1. Start Application</h3>
+            <p>Choose your account preference and provide personal and contact details.</p>
+          </li>
+          <li>
+            <h3>2. Upload and Verify</h3>
+            <p>Submit PAN, Aadhaar, and supporting documents through secure upload controls.</p>
+          </li>
+          <li>
+            <h3>3. Confirm and Track</h3>
+            <p>Complete declaration and get application reference for status monitoring.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="section ib-cta-section" id="support">
+      <div>
+        <h2>Ready to Begin?</h2>
+        <p>Start your account opening in minutes, with branch-grade reliability on a modern digital journey.</p>
+        <p><a class="button" href="/account-opening">Begin Secure Application</a></p>
       </div>
     </div>
   </main>
