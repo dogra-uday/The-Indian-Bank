@@ -31,34 +31,14 @@
             </ul>
           </div>
           <div class="ib-hero-visuals">
-              <div class="ib-filepicker-card">
-                <label class="ib-filepicker-label" for="heroImagePicker">Choose a hero image from your filesystem</label>
-                <input id="heroImagePicker" class="ib-filepicker-input" type="file" accept="image/*">
-                <p class="ib-filepicker-help">Select a local image and the preview will replace this placeholder automatically.</p>
-                <div class="ib-filepicker-preview" id="heroImagePreview">
-                  <span>Hero image preview appears here</span>
-                </div>
-              </div>
+            <div class="ib-hero-art" aria-hidden="true">
+              <div class="ib-hero-art-badge">Secure Onboarding</div>
+              <h3>Trusted blue-channel journey for account opening</h3>
+              <p>Designed for confidence, compliance, and smooth digital completion.</p>
+            </div>
           </div>
         </div>
       </div>
-      <script type="module">
-        const picker = document.getElementById('heroImagePicker');
-        const preview = document.getElementById('heroImagePreview');
-
-        if (picker && preview) {
-          picker.addEventListener('change', () => {
-            const [file] = picker.files || [];
-            if (!file) {
-              preview.innerHTML = '<span>Hero image preview appears here</span>';
-              return;
-            }
-
-            const objectUrl = URL.createObjectURL(file);
-            preview.innerHTML = `<img src="${objectUrl}" alt="Selected hero image preview">`;
-          });
-        }
-      </script>
     </div>
 
     <div class="section ib-value-section">
