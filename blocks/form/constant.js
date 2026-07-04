@@ -5,9 +5,9 @@ export const DEFAULT_THANK_YOU_MESSAGE = 'Thank you for your submission.';
 
 // Logging Configuration
 // Control logging via URL parameter: ?log=<level>
-// Valid levels: debug, info, error, off, warn → returns that level
-// Invalid/empty values (including 'on') → returns 'warn' (fallback)
-// AEM preview/live URLs (*.page, *.live) or localhost → returns 'warn'
+// Valid levels: debug, info, error, off, warn â†’ returns that level
+// Invalid/empty values (including 'on') â†’ returns 'warn' (fallback)
+// AEM preview/live URLs (*.page, *.live) or localhost â†’ returns 'warn'
 const VALID_LOG_LEVELS = ['error', 'debug', 'warn', 'info', 'off'];
 
 export const getLogLevelFromURL = (urlString = null) => {

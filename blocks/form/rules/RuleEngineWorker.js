@@ -25,15 +25,15 @@ import { getLogLevelFromURL } from '../constant.js';
 let customFunctionRegistered = false;
 
 /**
- * Main thread ↔ Worker message protocol:
+ * Main thread â†” Worker message protocol:
  *
- * Main → Worker:
+ * Main â†’ Worker:
  * - createFormInstance: Initialize worker with form definition. Payload: formDef + search params.
  *                       Worker creates form instance and returns initial state.
  * - decorated:          Main thread HTML rendering complete. Worker applies prefill data and
  *                       sends restore state + batched field changes.
  *
- * Worker → Main:
+ * Worker â†’ Main:
  * - renderForm:         Sent after createFormInstance. Payload: form state.
  *                       Main thread renders HTML form.
  * - restoreState:       Sent after 'decorated'. Payload: { state }.

@@ -8,7 +8,7 @@
  * @returns {Object} - Object with stop method to end the spinner
  */
 export const createSpinner = (message) => {
-  const frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
+  const frames = ['|', '/', '-', '\\'];
   let frameIndex = 0;
 
   const spinner = setInterval(() => {
@@ -28,9 +28,9 @@ export const createSpinner = (message) => {
  * Console utilities with colors and emojis
  */
 export const logger = {
-  success: (message) => console.log(`✅ ${message}`),
-  error: (message) => console.error(`❌ ${message}`),
-  warning: (message) => console.warn(`⚠️ ${message}`),
-  info: (message) => console.log(`ℹ️ ${message}`),
-  debug: (message) => console.log(`�� ${message}`),
+  success: (message) => console.log(`[OK] ${message}`),
+  error: (message) => console.error(`[ERROR] ${message}`),
+  warning: (message) => console.warn(`[WARN] ${message}`),
+  info: (message) => console.log(`[INFO] ${message}`),
+  debug: (message) => console.log(`[DEBUG] ${message}`),
 };

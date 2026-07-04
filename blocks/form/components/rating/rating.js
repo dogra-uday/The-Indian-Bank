@@ -44,7 +44,7 @@ export default function decorate(fieldDiv, fieldJson) {
     // add the star class to the star element
     star.classList.add('star');
     // add the text content to star element
-    star.textContent = '★';
+    star.textContent = 'â˜…';
     // add the star element to the rating div
     ratingDiv.appendChild(star);
 
@@ -88,9 +88,9 @@ export default function decorate(fieldDiv, fieldJson) {
         // if the index of star element is greater than 3 show happy emoji
         const emojiElement = ratingDiv.querySelector('.emoji');
         if (i <= 3) {
-          emojiElement.textContent = '😢';
+          emojiElement.textContent = 'ðŸ˜¢';
         } else {
-          emojiElement.textContent = '😊';
+          emojiElement.textContent = 'ðŸ˜Š';
         }
       }
     });
