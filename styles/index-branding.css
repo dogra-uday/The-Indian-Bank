@@ -97,6 +97,10 @@ main > .section.ib-hero-section {
   gap: 16px;
 }
 
+.ib-hero-image {
+  margin: 0;
+}
+
 .ib-hero-visuals img {
   width: 100%;
   border-radius: 18px;

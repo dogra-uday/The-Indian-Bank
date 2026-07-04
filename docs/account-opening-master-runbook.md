@@ -60,6 +60,26 @@ In the Adaptive Form block properties:
    - /styles/indian-bank-account-opening.css
 3. Confirm fields include personal, contact, account preference, KYC docs, declaration.
 
+### B3a. AEM Properties Panel Quick Fill
+
+Use these exact values when you enter the properties manually:
+
+1. Form Specific Custom Functions Path:
+   - forms/account-opening-form.json
+2. Form Specific styles path:
+   - /styles/indian-bank-account-opening.css
+3. Form path in authoring UI, if requested:
+   - /content/forms/af/indian-bank/account-opening
+4. Submit action:
+   - spreadsheet for quick start
+   - api for enterprise integration
+5. Thank-you message:
+   - <h3>Application submitted successfully.</h3><p>Your reference ID has been generated. Our onboarding team will contact you within one business day.</p>
+6. If the UI asks for a form action URL:
+   - /adobe/forms/af/submit/aW5kaWFuLWJhbmstYWNjb3VudC1vcGVuaW5n
+
+If the extension accepts a relative schema path, use exactly forms/account-opening-form.json. Do not paste the markdown link target ../forms/account-opening-form.json into the properties field.
+
 ### B4. Configure submission action
 
 You have two options:
