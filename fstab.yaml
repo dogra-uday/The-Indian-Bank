@@ -1,0 +1,5 @@
+mountpoints:
+  /:
+    url: "https://author-p24056-e1593080.adobeaemcloud.com/bin/franklin.delivery/dogra-uday/The-Indian-Bank/main"
+    type: "markup"
+    suffix: ".html"
